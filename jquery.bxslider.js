@@ -1139,8 +1139,8 @@
 						// calculate the position of the last slide
 						moveBy = slider.viewport.width() - lastChild.outerWidth();
 					}
-					// horizontal carousel, going previous while on first slide (infiniteLoop mode)
-				}else if(slider.carousel && slider.active.last && direction == 'prev'){
+					// going previous while on first slide (infiniteLoop mode)
+				}else if(slider.active.last && direction == 'prev'){
 					// get the last child position
 					position = el.children('.bx-clone').eq(slider.settings.moveSlides == 1 ? slider.settings.maxSlides - getMoveBy() : ((getPagerQty() - 1) * getMoveBy()) - (slider.children.length - slider.settings.maxSlides)).position();
 				// if infinite loop and "Next" is clicked on the last slide
