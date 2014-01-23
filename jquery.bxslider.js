@@ -494,10 +494,10 @@
 				// set the repective position
 				if (position != undefined){
           if (isVertical) {
-            if (slider.settings.infiniteLoop) position.top = (slider.active.index + 1) * slider.children.eq(firstIndex).outerHeight(true);
+            if (slider.settings.infiniteLoop && slider.settings.mode != 'fade') position.top = (slider.active.index + 1) * slider.children.eq(firstIndex).outerHeight(true);
             setPositionProperty(-position.top, 'reset', 0);
           } else {
-            if (slider.settings.infiniteLoop) position.left = (slider.active.index + 1) * slider.children.eq(firstIndex).outerWidth(true);
+            if (slider.settings.infiniteLoop && slider.settings.mode != 'fade') position.left = (slider.active.index + 1) * slider.children.eq(firstIndex).outerWidth(true);
             setPositionProperty(-position.left, 'reset', 0);
           }
 				}
@@ -652,8 +652,8 @@
 		 * Appends start / stop auto controls to the controls element
 		 */
 		var appendControlsAuto = function(){
-			slider.controls.start = $('<div class="bx-controls-auto-item"><a class="bx-start" href="">' + slider.settings.startText + '</a></div>');
-			slider.controls.stop = $('<div class="bx-controls-auto-item"><a class="bx-stop" href="">' + slider.settings.stopText + '</a></div>');
+			slider.controls.start = $('<div class="bx-controls-auto-item"><a href="" title="' + slider.settings.startText + '" class="bx-start">' + slider.settings.startText + '</a></div>');
+			slider.controls.stop = $('<div class="bx-controls-auto-item"><a href="" title="' + slider.settings.stopText + '" class="bx-stop">' + slider.settings.stopText + '</a></div>');
 			// add the controls to the DOM
 			slider.controls.autoEl = $('<div class="bx-controls-auto" />');
 			// bind click actions to the controls
