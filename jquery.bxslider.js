@@ -302,6 +302,8 @@
 			slider.viewport.height(getViewportHeight());
 			// make sure everything is positioned just right (same as a window resize)
 			el.redrawSlider();
+			// only show slider once everything is set up to prevent FOUC on mobile
+			el.css('visibility', 'visible');
 			// onSliderLoad callback
 			slider.settings.onSliderLoad(slider.active.index);
 			// slider has been fully initialized
