@@ -51,7 +51,7 @@
 		// CONTROLS
 		controls: true,
 		nextText: 'Next',
-		prevText: 'Prev',
+		prevText: 'Previous',
 		nextSelector: null,
 		prevSelector: null,
 		autoControls: false,
@@ -624,8 +624,8 @@
 		 * Appends prev / next controls to the controls element
 		 */
 		var appendControls = function(){
-			slider.controls.next = $('<a class="bx-next" href="">' + slider.settings.nextText + '</a>');
-			slider.controls.prev = $('<a class="bx-prev" href="">' + slider.settings.prevText + '</a>');
+			slider.controls.next = $('<a href="" title="' + slider.settings.nextText + '" class="bx-next">' + slider.settings.nextText + '</a>');
+			slider.controls.prev = $('<a href="" title="' + slider.settings.prevText + '" class="bx-prev">' + slider.settings.prevText + '</a>');
 			// bind click actions to the controls
 			slider.controls.next.bind('click', clickNextBind);
 			slider.controls.prev.bind('click', clickPrevBind);
